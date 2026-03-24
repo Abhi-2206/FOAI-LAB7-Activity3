@@ -1,6 +1,6 @@
 // --- Configuration & Constants ---
 // Place your API keys here
-const OPENROUTER_API_KEY = "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";
+const OPENROUTER_API_KEY = "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";
 const HF_TOKEN = "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";
 
 // API Endpoints
