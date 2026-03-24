@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot & Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <h1>AI Assistant</h1>
+            <p>Chat & Generate Images</p>
+        </header>
+
+        <!-- Chat Window -->
+        <main class="chat-window" id="chat-window">
+            <div class="message bot-message">
+                Hello! I can help answer your questions or generate images. How can I assist you today?
+            </div>
+            <!-- Dynamic messages will be appended here -->
+        </main>
+
+        <!-- Input Area -->
+        <footer class="chat-input-area">
+            <div class="mode-toggle">
+                <label for="image-mode-checkbox">
+                    <input type="checkbox" id="image-mode-checkbox">
+                    Generate Image Mode
+                </label>
+            </div>
+            <form id="chat-form" class="input-form">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Type your message..." 
+                    autocomplete="off" 
+                    required 
+                />
+                <button type="submit" id="send-button">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
