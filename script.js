@@ -1,10 +1,11 @@
 // --- Configuration & Constants ---
 // Place your API keys here
-const OPENROUTER_API_KEY = "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";
-const HF_TOKEN = "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";
+const OPENROUTER_API_KEY = "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";
+const HF_TOKEN = "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";
 
 // API Endpoints
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
+const MODEL = "openrouter/auto";
 const HF_URL = "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0";
 
 // --- State ---
@@ -121,7 +122,7 @@ async function generateImage(prompt, loadingId) {
 
     // The API returns the image as a binary blob
     const blob = await response.blob();
-    
+
     // Create a local object URL for the blob
     const imageUrl = URL.createObjectURL(blob);
 
@@ -154,14 +155,14 @@ function appendMessage(text, sender) {
 function appendImageMessage(url, altText, sender) {
     const msgDiv = document.createElement("div");
     msgDiv.classList.add("message", `${sender}-message`);
-    
+
     // Label for the generated image
     const textNode = document.createElement("div");
     textNode.textContent = `Generated image for: "${altText}"`;
     textNode.style.marginBottom = "8px";
     textNode.style.fontSize = "0.875rem";
     textNode.style.color = "#8b949e";
-    
+
     // Image element
     const img = document.createElement("img");
     img.src = url;
@@ -200,7 +201,7 @@ function appendLoadingIndicator() {
     const loadingDiv = document.createElement("div");
     loadingDiv.id = id;
     loadingDiv.classList.add("message", "bot-message");
-    
+
     loadingDiv.innerHTML = `
         <div class="loading-indicator">
             <div class="loading-dot"></div>
@@ -208,7 +209,7 @@ function appendLoadingIndicator() {
             <div class="loading-dot"></div>
         </div>
     `;
-    
+
     chatWindow.appendChild(loadingDiv);
     scrollToBottom();
     return id;
